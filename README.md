@@ -34,6 +34,22 @@ Downpour SGD 实际是 Parameter server 中的异步 SGD， Parameter server 相
 - Tensorflow 1.5.0
 - 3台8核8G机器
 
+**运行**
+
+在ps结点执行
+```
+python distributed.py --job_name=ps --task_index=0
+```
+在worker 0结点执行
+```
+python distributed.py --job_name=worker --task_index=0
+```
+
+在worker 1结点执行
+```
+python distributed.py --job_name=worker --task_index=1
+```
+
 
 
 
