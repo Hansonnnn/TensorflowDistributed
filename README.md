@@ -1,6 +1,6 @@
 ## Tensorflow分布式计算
 
-关于Tensorflow分布式计算的介绍，就不得不介绍关于其底层核心思想，核心实现———DistBelief,关于其的详细的介绍可以从[这篇文章](https://note.youdao.com/)中得知。下面简单的说明一下其中的几个核心点。
+本案例旨在进一步学习理解Tensorflow分布式原理。关于Tensorflow分布式计算的介绍，就不得不介绍关于其底层核心思想，核心实现———DistBelief,关于其的详细的介绍可以从[这篇文章](https://note.youdao.com/)中得知。下面简单的说明一下其中的几个核心点。
 
 首先，DistBelief 不支持 GPU，而是使用 CPU 集群 (CPU 核数量级 ~10^5) 来训练。对此，文章的解释是：
 >A known limitation of the GPU approach is that the training speed-up is small when the model does not fit in GPU memory (typically less than 6 gigabytes). To use a GPU effectively, researchers often reduce the size of the data or parameters so that CPU-to-GPU transfers are not a significant bottleneck. While data and parameter reduction work well for small problems (e.g. acoustic modeling for speech recognition), they are less attractive for problems with a large number of examples and dimensions (e.g., high-resolution images).
